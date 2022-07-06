@@ -37,7 +37,7 @@ The specific questions I aimed to answer were:
 
 ### **Article Data Retrieval**
 
-I collected most of my data from the [Springer Nature API](https://dev.springernature.com/), which is a leading global scientific publisher of books and journals. I have selected a range of journals available on the API, keeping in mind their [Scimago](https://www.scimagojr.com/journalrank.php?category=2801) ratings in mind.
+I collected most of my data from the Springer Nature API, which is a leading global scientific publisher of books and journals. I have selected a range of journals available on the API, keeping their Scimago ratings in mind.
 
 ### **Article Metrics Retrieval**
 
