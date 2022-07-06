@@ -43,6 +43,16 @@ I collected most of my data from the [Springer Nature API](https://dev.springern
 
 Most APIs that provide article metrics data are for institutional use only. I tackled this by web-scraping the individual articles' web pages straight from the two publishers’ websites: Springer and Nature.
 
+## Data Cleaning
+
+I cleaned the collected data by:
+
+- Dropping duplicates, rows with missing values, non-unique values across several features, articles written in languages other than English and all but the desired genres.
+- Encoding the publishers, open access, issue type, genres,
+- Removing undesired characters from all object-type columns (authors, title, keywords, abstracts etc).
+- Splitting the onilne metrics (e.g. '262 tweeters & 75 blogs & 51 Facebook pages') into their individual source columns.
+- Extracting the years published and the author counts.
+
 ## The dataset
 
 The resulting dataset contained information on 103985 Neuroscience articles, including:
