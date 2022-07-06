@@ -37,8 +37,54 @@ The specific questions I aimed to answer were:
 
 ### **Article Data Retrieval**
 
-I collected most of my data from the Springer Nature API, which is a leading global scientific publisher of books and journals. I have selected a range of journals available on the API, keeping their Scimago ratings in mind.
+I collected most of my data from the [Springer Nature API](https://dev.springernature.com/), which is a leading global scientific publisher of books and journals. I have selected a range of journals available on the API, keeping their [Scimago](https://www.scimagojr.com/journalrank.php?category=2801) ratings in mind.
 
 ### **Article Metrics Retrieval**
 
 Most APIs that provide article metrics data are for institutional use only. I tackled this by web-scraping the individual articles' web pages straight from the two publishers’ websites: Springer and Nature.
+
+## The dataset
+
+The resulting dataset contained information on 103985 Neuroscience articles, including:
+
+### **Article Content**
+
+| Variable      | Description | Type |
+| ----------- | ----------- | ----------- |
+| **doi** | Digital Object Identifier, a unique string of numbers, letters and symbols used to uniquely identify an article or document & provide it with a permanent web address | object |
+|**title**| Article title| object|
+|**journal**| The journal in which the article was published |object|
+|**year_published**| The year the article was published |int64|
+|**first_author**| Name of the first author, usually the person who contributed most to the work |object|
+|**second_author**| Name of the second author |object|
+|**third_author**|Name of the third author |object|
+|**author_count**| Total number of authors |int64|
+|**genre**| Article genre (0: Original Paper, 1: Review Paper, 2: Brief Communication) |int64|
+|**publisher**| Article publisher (0: Springer, 1: Nature)|int64|
+|**issue_type**| Issue type (0: Regular, 1: Combined, 2: Supplement, 3:Unknown) |int64|
+|**article_length**| Length of the article in pages |float64|
+|**is_open_access**| Whether the article can be freely accessed by anyone or just the academic institutions (0: Closed-access, 1: Open-access) |int64|
+|**keywords**| Article keywords |object|
+|**abstract**| Brief summary of the main article |object|
+
+### **Article Metrics**
+*as of 07th June 2022*
+
+| Variable      | Description | Type |
+| ----------- | ----------- | ----------- |
+| **article_accesses** | Number of times an article has been accessed on the publisher's website | float64 |
+| **web_of_science** | Number of times Clarivate users clicked on the available Web of Science links for the optimal, legitimate full-text version of the article, or took steps to save the item in a bibliographic management tool e.g. on EndNote | float64 |
+| **cross_ref** | Published citations counts for each work a.k.a how many scientific articles/other publications have cited that work since | float64 |
+| **twitter** | Number of mentions on Twitter | int64 |
+| **facebook** | Number of mentions on Facebook | int64 |
+| **blogs** | Number of mentions in blogs | int64 |
+| **google_plus** | Number of mentions on Google+ | int64 |
+| **news** | All media mentions | int64 |
+| **reddit** | Number of mentions on Reddit | int64 |
+| **pinterest** | Number of mentions on Pinterest | int64 |
+| **video**| Number of mentions on videos published online | int64 |
+| **wiki** | Number of mentions on the Wikipedia website | int64 |
+| **f1000** | Faculty Opinions (formerly f1000), essentially a number of "community endorsements" | int64 |
+| **mendeley** | Total Mendeley reader count | int64 |
+| **citeulike** | Total CiteULike saves, essentially "bookmarks" for academic research | int64 |
+
