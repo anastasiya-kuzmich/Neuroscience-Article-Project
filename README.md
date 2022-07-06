@@ -53,6 +53,8 @@ I cleaned the collected data by:
 - Splitting the onilne metrics (e.g. '262 tweeters & 75 blogs & 51 Facebook pages') into their individual source columns.
 - Extracting the years published and the author counts.
 
+Statistically speaking, there was a lot of outliers within the years, author counts and article length columns. However, these were all real data points when looked up, so I did not remove them to preserve the data variance.
+
 ## The dataset
 
 The resulting dataset contained information on 103985 Neuroscience articles, including:
@@ -97,4 +99,16 @@ The resulting dataset contained information on 103985 Neuroscience articles, inc
 | **f1000** | Faculty Opinions (formerly f1000), essentially a number of "community endorsements" | int64 |
 | **mendeley** | Total Mendeley reader count | int64 |
 | **citeulike** | Total CiteULike saves, essentially "bookmarks" for academic research | int64 |
+
+### **Engineered Features**
+
+I additionally engineered the following features during EDA and throughout modelling:
+
+| Variable      | Description | Type |
+| ----------- | ----------- | ----------- |
+| view_count | Article access count from the publisher's website | float64 |
+| value_factor | Citation counts within further published work to reflect the "value" to the scientific community a.k.a the cross-ref metric | float64 |
+| impact_factor | Mention counts from non-academic sources reflecting the article's "popularity" with the wider community e.g. social media, news etc; calculated using an Altmetric-like weighting system reflective of the reach of each type of source e.g. news = 8, Wikipedia = 3, Pinterest = 0.25. | float64 |
+| time_period | The decade an article was published | int64 |
+| topics | A lemmatised combination of keywords and title textual data, reflecting the key topics of the article | object |
 
