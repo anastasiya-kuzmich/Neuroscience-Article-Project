@@ -5,6 +5,14 @@ This project was completed as my final project of the General Assembly Data Scie
 
 ## **Notebook Contents**
 
+| File      | Contents |
+| ----------- | ----------- |
+| Anastasiya_Capstone_1_Acquisition_and_Cleaning.ipynb      | Acquisition and cleaning notebook       |
+| Anastasiya_Capstone_2_EDA.ipynb   | Exploratory Data Analysis (EDA) Notebook        |
+| Anastasiya_Capstone_2-1_EDA_Supplementary.ipynb  | Supplementary EDA: Modelling Topics by Decade        |
+| Anastasiya_Capstone_3_Modelling.ipynb   | Modelling & results        |
+| NonTechPresentation_NeuroscienceArticles_AnastasiyaKuzmich.ppsx   | A non-technical PowerPoint show recording        |
+
 *Please note the data files are not included but are available upon request.*
 
 ## **Background**
