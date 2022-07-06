@@ -250,7 +250,7 @@ Within this project, I successfully identified the features that most contribute
 
 My models can be used in tandem by publishers to “flag” high-impact & low-value articles for further peer review and fact-checking, as this class of articles is most likely to be picked up by the media, and less likely to be valuable to the scientific community. Such further verification could improve the publishers’ credibility and, more importantly, prevent the consequences of publishing potentially harmful articles (e.g. Wakefield’s MMR-autism study). 
 
-## Libraries used
+## Tools & Libraries
 
 - Requests
 - Beautiful Soup
@@ -265,6 +265,7 @@ My models can be used in tandem by publishers to “flag” high-impact & low-va
 - Imbalanced-learn
 - SciPy
 - XGBoost
+- Tableau
 
 ## Contact
 
