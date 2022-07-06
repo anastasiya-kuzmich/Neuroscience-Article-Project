@@ -148,3 +148,37 @@ To confirm that my dataset truly represents neuroscientific research of the past
 *Figure 3: The feature coefficients of an exploratory Logistic Regression model, demonstrating the defining article topics by decade.*
 
 For example, the top defining feature of the 1980s was “ct”, which is in line with the invention of the first commercially available CT scanner around that time and the resulting [Nobel Prize](http://www.nobelprize.org/prizes/medicine/1979/summary/). Likewise, the [Human Genome Project](https://en.wikipedia.org/wiki/Human_Genome_Project#:~:text=The%20Human%20Genome%20Project) was launched in 1990, and "gene" was the top-defining feature of neuroscience research within my dataset. The current decade was, of course, defined by the words "covid", "19" and "covid 19", within neuroscience research and far beyond.
+
+## Modelling
+
+The test regression models I fitted generalised poorly on the testing dataset. Furthermore, the size of the dataset meant that these models were running for several days with no result. Therefore, I decided to tackle these problems by  predicting whether an article was “high-impact” or “low-impact”, and “high-value” or “low-value”. I binarised my targets around the target mean. 
+
+The datasets produced after dummifying and frequency-vectorising the data were 100,000 rows x 1m+ columns in size. This meant that my kernel crashed and burned in the pre-processing stages, let alone in the modelling stages. Thus, I have decided to undersample the data to achieve target class balance using a random undersampler. This resulted in impact-targeting training-testing dataframes of size `(18772, 218372), (4694, 218372)`; and value-targeting training-testing dataframes of size `(33289, 367654), (8323, 367654)`.
+
+To further assist the preprocessing and modelling stages of this project, I decided to work in the sparse matrix format. This allowed me to model on all my variables, text included, at once and allowed me to fit my models in hours, not days. 
+
+In the past, I have found that meticulous hyperparameter tuning only ever slightly improves the model but takes a long time to run, so for this project, I defined a “baseline algorithm testing” function that ran a variety of models under basic parameters. These included the K-Nearest Neighbors Classifier, Logistic Regression, Decision Tree Classifier, Random Forest Classifier, Gradient Boosting Classifier and XGB Classifier. Of these, I selected to tune the most promising model based on the highest mean cross-validated accuracy score with the lowest standard deviation.
+
+### Models of Choice
+
+For my *impact factor* predicting model, my model of choice was the Lasso-like Logistic Regression with the following parameters:
+
+```
+penalty = 'l2'
+solver = 'saga'
+max_iter = 1000
+C = 166.81005372
+```
+
+This model achieved an accuracy score of 0.925 on the training set, 0.889 on the testing set and 0.885±2.85e-05 in stratified 4-fold cross-validation. 
+
+For my *value factor* predicting model, my model of choice was the Lasso-like Logistic Regression with the following parameters:
+
+```
+penalty='l2'
+solver='saga'
+max_iter = 1000
+C= 10000
+```
+
+This model achieved an accuracy score of 0.89 on the training set, 0.86 on the testing set and 0.86±1.51e-05 in stratified 4-fold cross-validation.
