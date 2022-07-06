@@ -32,3 +32,13 @@ The specific questions I aimed to answer were:
 2. Which factors contribute most to the *impact* of an article on the general public?
     - *Target: impact factor measured as mention counts on social media, news outlets, and other non-academic sources.*
 3. Which article features result in the biggest disparities between the scientific and general communities?
+
+## **Data Acquisition**
+
+### **Article Data Retrieval**
+
+I collected most of my data from the [Springer Nature API](https://dev.springernature.com/), which is a leading global scientific publisher of books and journals. I have selected a range of journals available on the API, keeping in mind their [Scimago](https://www.scimagojr.com/journalrank.php?category=2801) ratings in mind.
+
+### **Article Metrics Retrieval**
+
+Most APIs that provide article metrics data are for institutional use only. I tackled this by web-scraping the individual articles' web pages straight from the two publishers’ websites: Springer and Nature.
