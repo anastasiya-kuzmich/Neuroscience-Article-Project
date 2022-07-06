@@ -112,3 +112,39 @@ I additionally engineered the following features during EDA and throughout model
 | time_period | The decade an article was published | int64 |
 | topics | A lemmatised combination of keywords and title textual data, reflecting the key topics of the article | object |
 
+## Exploratory Data Analysis (EDA)
+
+### General Dataset Features
+
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6f763185-b097-43ec-aa67-d3055cd065b9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T165903Z&X-Amz-Expires=86400&X-Amz-Signature=24a624bcd4b79b503a045a98e5068a5c71b896a36143fcf9166cdc92180c3c81&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+     alt="The journal sources of the articles within this dataset. The size of each bubble corresponds to the article quantity from a given journal. "
+     style="float: left; margin-right: 10px;" />
+
+*Figure 1: The journal sources of the articles within this dataset. The size of each bubble corresponds to the article quantity from a given journal.*
+
+- The vast majority of the articles in this dataset were original research papers.
+- 2/3 published by Springer, the rest by Nature.
+- Only 13% were open-access.
+- The oldest article was published in 1870, the newest in 2022, and the vast majority were released in the 21st century.
+- An average article within this dataset was written by a group of 6 authors, while the largest team it took to produce a research article was 559 authors.
+- An average article within this dataset was 10 pages long, while the longest article reached 101 pages.
+- On average, reviews are both more valuable and impactful than original research papers. Likewise, Nature journals have a much higher average impact and value factors than those published by Springer. Open access articles were on average much more impactful, but less valuable.
+- The view count was much higher correlated with the impact factor (0.72) than the value factor (0.28), thus how many times an article is read does not necessarily reflect its face value to the scientific community. This was further supported by the near-0 correlation between the value and impact factors themselves.
+
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/efacb9e4-6f34-40a7-9d39-84c0820dc352/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T170244Z&X-Amz-Expires=86400&X-Amz-Signature=d7e6f62b25142d910728641c77909c22b34126aa9f894a8af6ec772454322004&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+     alt="The journal sources of the articles within this dataset. The size of each bubble corresponds to the article quantity from a given journal. "
+     style="float: left; margin-right: 10px;" />
+
+*Figure 2: An example word cloud trained on the titles of all articles. Expectedly, the words brain, cell and disease dominated the articles.*
+
+### Verifying the dataset’s integrity
+
+To confirm that my dataset truly represents neuroscientific research of the past century, I fitted an explorative multi-class Logistic Regression model using the decade as a target and the abstract as the predictor. The model's feature coefficients allowed me to highlight some of the "decade-defining" features.
+
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e161ea38-47fd-4f34-96dd-cad3476db099/Screenshot_2022-07-06_at_17.57.45.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T170533Z&X-Amz-Expires=86400&X-Amz-Signature=bc64e433acd60691ce7bf0e195d8abde924f0d4c1fe66d88130ddaee15da2eca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202022-07-06%2520at%252017.57.45.png%22&x-id=GetObject"
+     alt="The journal sources of the articles within this dataset. The size of each bubble corresponds to the article quantity from a given journal. "
+     style="float: left; margin-right: 10px;" />
+     
+*Figure 3: The feature coefficients of an exploratory Logistic Regression model, demonstrating the defining article topics by decade.*
+
+For example, the top defining feature of the 1980s was “ct”, which is in line with the invention of the first commercially available CT scanner around that time and the resulting [Nobel Prize](http://www.nobelprize.org/prizes/medicine/1979/summary/). Likewise, the [Human Genome Project](https://en.wikipedia.org/wiki/Human_Genome_Project#:~:text=The%20Human%20Genome%20Project) was launched in 1990, and "gene" was the top-defining feature of neuroscience research within my dataset. The current decade was, of course, defined by the words "covid", "19" and "covid 19", within neuroscience research and far beyond.
