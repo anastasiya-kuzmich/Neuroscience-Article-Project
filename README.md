@@ -1,7 +1,7 @@
 # Neuroscience Articles Impact vs Value
 ## **Overview**
 
-This project was completed as my final project of the General Assembly Data Science Immersive course. This document addresses the problem, aims, methodology, findings, conclusions and tools used.
+This 4-week solo project was completed as my final assignment of the General Assembly Data Science Immersive course. This document addresses the problem, aims, methodology, findings, conclusions and tools used.
 
 ## **Notebook Contents**
 
@@ -33,6 +33,23 @@ The specific questions I aimed to answer were:
     - *Target: impact factor measured as mention counts on social media, news outlets, and other non-academic sources.*
 3. Which article features result in the largest disparities between the scientific and general communities?
 
+## Tools & Libraries
+
+- Requests
+- Beautiful Soup
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- WordCloud
+- TextWrap
+- NLTK
+- Imbalanced-learn
+- SciPy
+- XGBoost
+- Tableau
+
 ## **Data Acquisition**
 
 ### **Article Data Retrieval**
@@ -50,7 +67,7 @@ I cleaned the collected data by:
 - Removing duplicates, rows with missing values, non-unique values across several features, articles written in languages other than English and all but the desired genres
 - Encoding the publishers, open access, issue types and genres
 - Removing undesired characters from all object-type columns (authors, title, keywords, abstracts etc.)
-- Splitting the onilne metrics (e.g. '262 tweeters & 75 blogs & 51 Facebook pages') into their individual source columns
+- Splitting the online metrics (e.g. '262 tweeters & 75 blogs & 51 Facebook pages') into their individual source columns
 - Extracting the years published and the author counts
 
 Statistically speaking, there were many outliers within the years, author counts and article length columns. However, these were all real data points when looked up, so I did not remove them to preserve the data variance.
@@ -249,23 +266,6 @@ Please refer to my [Modelling Notebook](https://github.com/anastasiya-kuzmich/Ne
 Within this project, I successfully identified the features that most contribute to the disparity between the “impact” a scientific article has on the general public, and the genuine “value” it brings to scientific research. My machine learning models can identify these article qualities with 86-89% accuracy, while their coefficients define the journals, topics and other features with the highest contributions to this phenomenon.
 
 My models can be used in tandem by publishers to “flag” high-impact & low-value articles for further peer review and fact-checking, as this class of articles is most likely to be picked up by the media, and less likely to be valuable to the scientific community. Such further verification could improve the publishers’ credibility and, more importantly, prevent the consequences of publishing potentially harmful articles (e.g. Wakefield’s MMR-autism study). 
-
-## Tools & Libraries
-
-- Requests
-- Beautiful Soup
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- WordCloud
-- TextWrap
-- NLTK
-- Imbalanced-learn
-- SciPy
-- XGBoost
-- Tableau
 
 ## Contact
 
