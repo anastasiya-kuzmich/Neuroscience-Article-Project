@@ -133,9 +133,7 @@ I additionally engineered the following features during EDA and throughout model
 
 ### General Dataset Features
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6f763185-b097-43ec-aa67-d3055cd065b9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T165903Z&X-Amz-Expires=86400&X-Amz-Signature=24a624bcd4b79b503a045a98e5068a5c71b896a36143fcf9166cdc92180c3c81&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
-     alt="The journal sources of the articles within this dataset. The size of each bubble corresponds to the article quantity from a given journal. "
-     style="float: left; margin-right: 10px;" />
+[![Journal-Article-Counts.png](https://i.postimg.cc/L8Qpgdn5/Journal-Article-Counts.png)](https://postimg.cc/5XzGDR5W)
 
 *Figure 1: The publishing journals of the articles within this dataset. The size of each bubble corresponds to the article quantity from a given journal.*
 
@@ -148,9 +146,7 @@ I additionally engineered the following features during EDA and throughout model
 - On average, reviews are both more valuable and impactful than original research papers. Likewise, Nature journals have a much higher average impact and value factors than those published by Springer. Open access articles were on average much more impactful, but less valuable.
 - The view count was much higher correlated with the impact factor (0.72) than the value factor (0.28), thus how many times an article is read does not necessarily reflect its face value to the scientific community. This was further supported by the near-0 correlation between the value and impact factors themselves.
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/efacb9e4-6f34-40a7-9d39-84c0820dc352/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T170244Z&X-Amz-Expires=86400&X-Amz-Signature=d7e6f62b25142d910728641c77909c22b34126aa9f894a8af6ec772454322004&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
-     alt="The journal sources of the articles within this dataset. The size of each bubble corresponds to the article quantity from a given journal. "
-     style="float: left; margin-right: 10px;" />
+[![title-wc.png](https://i.postimg.cc/3r20X1jY/title-wc.png)](https://postimg.cc/s1D2yp0N)
 
 *Figure 2: An example word cloud trained on the titles of all articles. Expectedly, the words brain, cell and disease dominated the articles.*
 
@@ -158,9 +154,7 @@ I additionally engineered the following features during EDA and throughout model
 
 To confirm that my dataset truly represents the neuroscientific research of the past century, I fitted an explorative multi-class Logistic Regression model using the decade as a target and the abstract as the predictor. The model's feature coefficients allowed me to highlight some of the "decade-defining" features.
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e161ea38-47fd-4f34-96dd-cad3476db099/Screenshot_2022-07-06_at_17.57.45.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T170533Z&X-Amz-Expires=86400&X-Amz-Signature=bc64e433acd60691ce7bf0e195d8abde924f0d4c1fe66d88130ddaee15da2eca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202022-07-06%2520at%252017.57.45.png%22&x-id=GetObject"
-     alt=""
-     style="float: left; margin-right: 10px;" />
+[![Bar-Defining-Topics-By-Decade.png](https://i.postimg.cc/Y0PPq7XB/Bar-Defining-Topics-By-Decade.png)](https://postimg.cc/64dcYkJM)
      
 *Figure 3: The feature coefficients of an exploratory Logistic Regression model, demonstrating the defining article topics by decade.*
 
@@ -240,15 +234,11 @@ This model achieved an accuracy score of 0.89 on the training set, 0.86 on the t
 
 Exploring the feature coefficients of these models uncovered the article attributes that most differently affect their impact and value. Preferential differences between the scientific community and the general public were observed within the articles’ decades, journals, publishers and genres.
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6a934d4e-dd88-4399-beb0-b0ae0f35d9b5/topics_scatter.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T181630Z&X-Amz-Expires=86400&X-Amz-Signature=94fc053fcde49854372a499c2809fd6e5262c9b40c7eb4ba5ee702270272d86c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22topics%2520scatter.png%22&x-id=GetObject"
-     alt=""
-     style="float: left; margin-right: 10px;" />
+[![topics-scatter.png](https://i.postimg.cc/TYqk4rxX/topics-scatter.png)](https://postimg.cc/fJyj3SkH)
 
 *Figure 4: Topic Differences in Value vs Impact Coefficients*
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bfb55d58-0bdf-4193-885c-6f6fa68b9071/Screenshot_2022-07-06_at_11.50.48.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220706%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220706T181642Z&X-Amz-Expires=86400&X-Amz-Signature=9c7d163603e7c9be625b56dcdbd7bb257b65d8fa7d00aea104247f9ec155002a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202022-07-06%2520at%252011.50.48.png%22&x-id=GetObject"
-     alt=""
-     style="float: left; margin-right: 10px;" />
+[![Screenshot-2022-07-06-at-11-50-48.png](https://i.postimg.cc/cC3zHjPK/Screenshot-2022-07-06-at-11-50-48.png)](https://postimg.cc/rR8jZhVc)
 
 *Figure 5: All Differences in Impact vs Value Coefficients*
 
